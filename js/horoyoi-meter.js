@@ -7,7 +7,7 @@ let season_message;
 if (season === 1) {
     season_message = ('あけましておめでとうございます。年末年始、飲みすぎていませんか？');
 } else if (season === 2) {
-    seson_message = ('厳しい寒さが続きます。日本酒や赤ワインには体を温めてくれる作用があります。');
+    season_message = ('厳しい寒さが続きます。日本酒や赤ワインには体を温めてくれる作用があります。');
 } else if (season === 3) {
     season_message = ('桜の季節がやってきましたね。お花見しながらのお酒はおいしいですね。');
 } else if (season === 4) {
