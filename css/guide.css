@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+.guide-wrap {
+    width: 90%;
+    margin: 0 auto;
+}
+.guide-wrap h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #888;
+}
+.guide-wrap ul li {
+    margin-bottom: 30px;
+}
+.guide-wrap ul li:last-of-type {
+    margin-bottom: 0;
+}
+.guide-wrap p {
+    font-weight: bold;
+    font-size: 0.9em;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    color: #1f1f1f;
+}
+.guide-notice {
+    font-size: 0.8em;
+}
+.guide-wrap a {
+    color: #26baf0;
+    transition: all .3s;
+}
+.guide-wrap a:hover {
+    color: #1f1f1f;
+}
+
+.marker{
+    background: linear-gradient(transparent 60%, #faf139 70%);
+    width: 60%;
+}
+.small-number {
+    font-size: 0.6em;
+}
+
+@media screen and (min-width: 1024px){
+    .guide-wrap h2 {
+        margin-bottom: 20px;
+    }
+    .guide-wrap ul li {
+        margin-bottom: 80px;
+    }
+    .guide-wrap p {
+        font-size: 1em;
+        line-height: 1.8;
+    }
+}
