@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ryuki-4648/horoyoi-meter/issues"
   },
-  "homepage": "https://github.com/Ryuki-4648/horoyoi-meter#readme"
+  "homepage": "https://github.com/Ryuki-4648/horoyoi-meter#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
