@@ -1,0 +1,20 @@
+{
+  "name": "horoyoi-meter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryuki-4648/horoyoi-meter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryuki-4648/horoyoi-meter/issues"
+  },
+  "homepage": "https://github.com/Ryuki-4648/horoyoi-meter#readme"
+}
