@@ -13,6 +13,7 @@
 .faq dt {
     position: relative;
     text-align: left;
+    cursor: pointer;
     /*display: flex;*/
     align-items: center;
     justify-content: center;
