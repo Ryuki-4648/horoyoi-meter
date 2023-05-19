@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ryuki-4648/horoyoi-meter#readme",
   "devDependencies": {
     "browser-sync": "^2.29.3",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-changed": "^4.0.3",
