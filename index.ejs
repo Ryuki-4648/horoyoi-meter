@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ほろよいメーター | 「ほろよいメーター」で酔い度をチェック。適量飲酒を心がけ、お酒をたのしく飲みましょう。</title>
+
+    <meta name="description" content="アルコール中毒には要注意！「ほろよいメーター」で酔い度をチェックしてみましょう。">
+
+    <!-- OGP -->
+    <meta property="og:title" content="ほろよいメーター | 「ほろよいメーター」で酔い度をチェック。適量飲酒を心がけ、お酒をもっと、たのしく。">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="アルコール中毒には要注意！「ほろよいメーター」で酔い度をチェックしてみましょう。">
+    <meta property="og:url" content="https://www.yuki-017.com/horoyoi-meter/index.html">
+
+    <%- include('assets/inc/head') %>
+  </head>
+
+  <body>
+
+    <%- include('assets/inc/header') %>
+    
+    <section class="intro">
+      <div class="contents">
+        <div class="intro-wrap">
+          <p id="title01">Introduction</p>
+          <p id="season_message"></p>
+          <p class="intro-message">適量飲酒でお酒をもっと、たのしく。<br>「ほろよいメーター」で酔い度をチェックしてみましょう。</p>
+        </div>
+      </div>
+    </section>
+
+    <form name="alc_form">
+
+      <section class="weight">
+        <div class="contents">
+          <div class="wrap">
+            <div class="step-sp">
+              <img src="/assets/img/step-01.png" alt="Step1">
+            </div>
+            <p id="title02"><img src="/assets/img/step-01.png" class="step-pc" alt="Step1">体重を入力してください。</p>
+          </div>
+            
+          <table class="weight-table">
+            <tr>
+              <th>体重</th>
+              <td>
+                <input id="input_weight" type="number" name="weight" value="">
+                <label for="input_weight"></label>
+                <span class="unit">Kg</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p class="comment" id="message_1"></p>
+      </section>
+
+      <section class="alcohol">
+        <div class="contents">
+          <div class="wrap">
+            <div class="step-sp"><img src="/assets/img/step-02.png" alt="Step2"></div>
+            <p id="title03"><img src="/assets/img/step-02.png" class="step-pc" alt="Step2">お酒の量を入力してください。</p>
+          </div>
+          <table class="list">
+            <tr class="index">
+              <th>お酒の種類</th>
+              <th>本数</th>
+              <th>アルコール度数(%)</th>
+              <th>純アルコール量(g)</th>
+            </tr>
+
+            <tr>
+              <td class="type">ビール・酎ハイなど
+                <span class="note">1缶350mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="auto-in" id="num_beer" name="beer">
+                <span class="unit">缶</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>5%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_beer" class="auto-out"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">ウイスキー・ブランデー
+                <span class="note">シングル(30ml)とする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="auto" id="num_whisky" name="whisky">
+                <span class="unit">杯</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>40%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_whisky"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">ハイボール
+                <span class="note">1缶350mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_high">
+                <span class="unit">缶</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>7%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_high"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">日本酒
+                <span class="note">1合180mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_nihon">
+                <span class="unit">合</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>15%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_nihon"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">焼酎
+                <span class="note">0.6合110mとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_shochu">
+                <span class="unit">合</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>25%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_shochu"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">グラスワイン
+                <span class="note">1杯125mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_glasswine">
+                <span class="unit">杯</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>14%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_glasswine"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">ボトルワイン
+                <span class="note">1本750mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_bottlewine">
+                <span class="unit">本</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>14%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_bottlewine"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">泡盛
+                <span class="note">0.5合90mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_awamori">
+                <span class="unit">合</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>30%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_awamori"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="type">ハブ酒
+                <span class="note">1杯30mlとする</span>
+              </td>
+              <td>
+                <input type="number" value="" class="" id="num_habu">
+                <span class="unit">杯</span>
+              </td>
+              <td class="percent">
+                <span class="percent-sp">アルコール度数:</span>25%
+              </td>
+              <td class="pure">
+                <span class="pure-sp">純アルコール量:</span>
+                <span id="output_habu"></span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </form>
+
+    <section class="result">
+      <div class="contents">
+        <ul class="button">
+          <li class="show">
+            <button id="result_button">結果を見る</button>
+          </li>
+          <li class="reset">
+            <button id="reset_button">リセットする</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="result-message">
+      <div class="inner">
+        <p class="total-number">あなたは合計で<span id="num_total" class="p-bold">??本,</span><span id="cap_total" class="p-bold">??ml</span>飲みました。</p>
+        <p class="total">純アルコール量の合計：<span id="pure_alc" class="p-bold">??ml</span></p>
+        <p class="result-percent">血中アルコール濃度：<span id="blood_alc" class="p-bold">??%</span></p>
+        <p class="period">あなたの酔い具合は、<br class="br-pc"><span id="your_status" class="p-bold">??期</span></p>
+        <p id="error_message"></p>
+        <p id="alcoholism"></p>
+      </div>
+    </div>
+
+    <section class="chart">
+      <div class="inner">
+        <ul>
+          <li><img src="/assets/img/soukai.jpg" class="thumbnail" data-image="/assets/img/soukai-d.jpg" alt="爽快期"></li>
+          <li><img src="/assets/img/horoyoi.jpg" class="thumbnail" data-image="/assets/img/horoyoi-d.jpg" alt="ほろよい期"></li>
+          <li><img src="/assets/img/shoki.jpg" class="thumbnail" data-image="/assets/img/shoki-d.jpg" alt="酩酊初期"></li>
+          <li><img src="/assets/img/meitei.jpg" class="thumbnail" data-image="/assets/img/meitei-d.jpg" alt="酩酊期"></li>
+          <li><img src="/assets/img/deisui.jpg" class="thumbnail" data-image="/assets/img/deisui-d.jpg" alt="泥酔期"></li>
+          <li><img src="/assets/img/konsui.jpg" class="thumbnail" data-image="/assets/img/konsui-d.jpg" alt="昏睡期"></li>
+        </ul>
+
+        <p>名称をクリックすると、それぞれの説明が表示されます。</p>
+
+        <div class="main-image">
+          <img src="/assets/img/soukai-d.jpg" id="main" alt="酔い具合の結果画像">
+        </div>
+      </div>
+    </section>
+
+    <%- include('assets/inc/footer') %>
+
+    <%- include('assets/inc/js') %>
+
+</body>
+</html>
