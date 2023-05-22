@@ -16,9 +16,12 @@ const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 const del = require('del');
 const browserSync = require('browser-sync'); // 変更を即座にブラウザへ反映(ブラウザリロード)
+
+
 // 入出力するフォルダを指定しやすいように変数を定義
 const srcBase = 'src';
 const destBase = 'dest';
+
 const srcPath = {
   'ejs': [srcBase + '/**/*.ejs', '!' + srcBase + '/**/_*.ejs'],
   'allEjs': srcBase + '/**/*.ejs',
@@ -30,6 +33,7 @@ const srcPath = {
   'htaccess': srcBase + '/**/.htaccess',
   'allFiles': srcBase + '/**/*'
 };
+
 const destPath = {
   'ejs': destBase + '/',
   'css': destBase + '/assets/css/',
@@ -40,6 +44,7 @@ const destPath = {
   'htaccess': destBase + '/',
   'allFiles': destBase + '/**/*'
 };
+
 // Ejs出力設定(EJSからHTMLを自動で生成する)
 function compileEjs() {
   return gulp.src(srcPath.ejs)
@@ -57,6 +62,7 @@ function compileEjs() {
   .pipe(gulp.dest(destPath.ejs))
   .pipe(browserSync.stream());
 }
+
 // Sass出力設定(scssを自動で生成する)
 function compileSass() {
   return gulp.src(srcPath.scss)
@@ -66,6 +72,7 @@ function compileSass() {
   .pipe(gulp.dest(destPath.css))
   .pipe(browserSync.stream());
 }
+
 // JavaScript出力設定
 function minJs() {
   return gulp.src(srcPath.js)
@@ -74,10 +81,12 @@ function minJs() {
   .pipe(gulp.dest(destPath.js))
   .pipe(browserSync.stream());
 }
+
 function minJson() {
   return gulp.src(srcPath.json)
   .pipe(gulp.dest(destPath.json));
 }
+
 // 画像出力設定
 function compileImagem() {
   return gulp.src(srcPath.img)
@@ -94,20 +103,24 @@ function compileImagem() {
   // .pipe(webp({ quality: 65, method: 6 })) // webp変換（必要であれば）
   .pipe(gulp.dest(destPath.img));
 }
+
 // lib出力設定
 function lib() {
   return gulp.src(srcPath.lib)
   .pipe(gulp.dest(destPath.lib));
 }
+
 // htaccess出力設定
 function htaccess() {
   return gulp.src(srcPath.htaccess)
   .pipe(gulp.dest(destPath.htaccess));
 }
+
 // destフォルダの削除(生成前に、一度生成した中身を削除する)
 function clean() {
   return del(destBase);
 };
+
 // ローカルサーバー立ち上げ
 const browserSyncOption = {
   server: destBase
@@ -115,11 +128,13 @@ const browserSyncOption = {
 function browserSyncFunc() {
   browserSync.init(browserSyncOption);
 }
+
 // リロード
 function browserSyncReload(done) {
   browserSync.reload();
   done();
 }
+
 // 監視ファイル設定(ファイルの変更時にbrowserSyncReloadする)
 function watchFiles(done) {
   gulp.watch(srcPath.scss, gulp.series(compileSass));
@@ -129,12 +144,14 @@ function watchFiles(done) {
   gulp.watch(srcPath.allEjs, gulp.series(compileEjs, browserSyncReload));
   done();
 }
+
 // タスク実行設定(css、EJS、img、jsを出力する)
 exports.default = gulp.series(
   clean,
   gulp.parallel(htaccess, lib, compileEjs, compileSass, minJs, minJson, compileImagem),
   gulp.parallel(watchFiles, browserSyncFunc)
 );
+
 exports.release = gulp.series(
   clean,
   gulp.parallel(htaccess, lib, compileEjs, compileSass, minJs, minJson, compileImagem)

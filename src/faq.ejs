@@ -4,78 +4,18 @@
     <title>よくある質問 | ほろよいメーター | 「ほろよいメーター」で酔い度をチェック。適量飲酒を心がけ、お酒をたのしく飲みましょう。</title>
 
     <meta name="description" content="アルコール中毒には要注意！「ほろよいメーター」で酔い度をチェックしてみましょう。">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta charset="UTF-8">
-
-    <!-- FontAwesome -->
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/faq.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon/favicon.ico">
 
     <!-- OGP -->
     <meta property="og:title" content="ほろよいメーター | 「ほろよいメーター」で酔い度をチェック。適量飲酒を心がけ、お酒をもっと、たのしく。">
     <meta property="og:type" content="article">
     <meta property="og:description" content="アルコール中毒には要注意！「ほろよいメーター」で酔い度をチェックしてみましょう。">
     <meta property="og:url" content="https://www.yuki-017.com/horoyoi-meter/index.html">
-    <meta property="og:site_name" content="ほろよいメーター | 「ほろよいメーター」で酔い度をチェック。">
-    <meta property="og:image" content="https://www.yuki-017.com/horoyoi-meter/img/eyecatch.jpg">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Ryuki_4648">
+    <%- include(incFile + '_head.ejs'); %>
   </head>
 
   <body>
-
-    <div id="loading"></div>
-    <div class="toggle"></div>
-            
-    <div class="nav-wrap">
-      <nav class="nav-contents">
-        <div class="nav-inner">
-          <div class="svg-wrap">
-            <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg">
-              <path id="nav-wave" d=""/>
-            </svg>
-          </div>
-
-          <h1 class="title"><img src="/assets/img/logo-beer.png" alt="ロゴ"></h1>
-          
-          <div class="menu">
-            <ul>
-              <li class="nav-li">
-                <a href="index.html">トップ<i class="fas fa-arrow-right"></i></a>
-              </li>
-              <li class="nav-li">
-                <a href="faq.html">よくある質問<i class="fas fa-arrow-right"></i></a>
-              </li>
-              <li class="nav-li">
-                <a href="otsumami.html">おつまみ<i class="fas fa-arrow-right"></i></a>
-              </li>
-              <li class="nav-li">
-                <a href="guide.html">ご利用ガイド<i class="fas fa-arrow-right"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- nav-contents -->
-    </div>
-    <!-- nav-wrap -->
-
-    <header class="header">
-      <div class="header-wrap">
-        <a href="index.html">
-          <img src="/assets/img/logo-beer.png" alt="ロゴ">
-        </a>
-        <span>お酒をもっと、たのしく。</span>
-      </div>
-    </header>
+    <%- include(incFile + '_header.ejs'); %>
 
     <section class="faq">
       <div class="contents">
@@ -159,52 +99,23 @@
         <dl>
           <dt>アルコール中毒を防ぐには？</dt>
           <dd>
-              普段から自分の適量を把握しておくことが大切です。
-              <br>
-              また空腹時は、アルコールが胃腸から早く吸収されるため、食事をしながら適度に飲みましょう。
-              <br>
-              一気飲みや体調が良くないときの飲酒、人に無理に飲酒をすすめることはやめましょう。
-              <br>
-              <br>
-              参考サイト：<a href="https://www.asahibeer.co.jp/csr/tekisei/ikki/prevent.html" target="_blank">人とお酒のイイ関係</a>
+            普段から自分の適量を把握しておくことが大切です。
+            <br>
+            また空腹時は、アルコールが胃腸から早く吸収されるため、食事をしながら適度に飲みましょう。
+            <br>
+            一気飲みや体調が良くないときの飲酒、人に無理に飲酒をすすめることはやめましょう。
+            <br>
+            <br>
+            参考サイト：<a href="https://www.asahibeer.co.jp/csr/tekisei/ikki/prevent.html" target="_blank">人とお酒のイイ関係</a>
           </dd>
         </dl>
       </div>
     </section>
 
-    <div class="container">
-      <div class="footer">
-        <ul class="sns">
-          <li>
-            <a href="">
-              <img src="/assets/img/tw.png" alt="Twitterのアイコン">
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="/assets/img/fb.png" alt="Facebookのアイコン">
-            </a>
-          </li>
-        </ul>
-          
-        <p class="caution">ストップ！20歳未満飲酒・飲酒運転。<br class="br-sp">妊娠中や授乳期の飲酒はやめましょう。<br>
-          お酒はなによりも適量です。のんだあとはリサイクル。
-        </p>
-        <p class="copyright">Copyright© 2020-Horoyoi Meter All Rights Reserved.<br class="br-sp">by <a href="https://www.yuki-017.com/" target="_blank">YUKI WORKS</a>.</p>
-      </div>
-      <svg class="svg-beer" version="1.1" xmlns="http://www.w3.org/2000/svg"><path id="wave" d=""/></svg>
-    </div>
+    <%- include(incFile + '_footer.ejs'); %>
   
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <%- include(incFile + '_js.ejs'); %>
     <script src="/assets/js/faq.js"></script>
-    
-    <script src="/assets/js/lib/anime.min.js"></script>
-    <script src="/assets/js/lib/main.js"></script>
-    <script src="/assets/js/lib/scrollMonitor.js"></script>
 
   </body>
 </html>

@@ -3,7 +3,7 @@
 
 setTimeout(title01, 10);
 function title01() {
-  var scrollElemToWatch_1 = document.getElementById('title01'),
+  const scrollElemToWatch_1 = document.getElementById('title01'),
       watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
       rev1 = new RevealFx(scrollElemToWatch_1, {
         revealSettings : {
@@ -34,7 +34,7 @@ function title01() {
 
 setTimeout(block_01, 10);
 function block_01() {
-  var scrollElemToWatch_1 = document.getElementById('block_01'),
+  const scrollElemToWatch_1 = document.getElementById('block_01'),
     watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
     rev1 = new RevealFx(scrollElemToWatch_1, {
       revealSettings : {
@@ -64,7 +64,7 @@ function block_01() {
 
 setTimeout(block_02, 10);
 function block_02() {
-  var scrollElemToWatch_1 = document.getElementById('block_02'),
+  const scrollElemToWatch_1 = document.getElementById('block_02'),
     watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
     rev1 = new RevealFx(scrollElemToWatch_1, {
       revealSettings : {
@@ -95,7 +95,7 @@ function block_02() {
 
 setTimeout(block_03, 10);
 function block_03() {
-  var scrollElemToWatch_1 = document.getElementById('block_03'),
+  const scrollElemToWatch_1 = document.getElementById('block_03'),
     watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
     rev1 = new RevealFx(scrollElemToWatch_1, {
       revealSettings : {
@@ -127,7 +127,7 @@ function block_03() {
 
 setTimeout(block_04, 10);
 function block_04() {
-  var scrollElemToWatch_1 = document.getElementById('block_04'),
+  const scrollElemToWatch_1 = document.getElementById('block_04'),
     watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
     rev1 = new RevealFx(scrollElemToWatch_1, {
       revealSettings : {
@@ -158,7 +158,7 @@ function block_04() {
 
 setTimeout(block_05, 10);
 function block_05() {
-  var scrollElemToWatch_1 = document.getElementById('block_05'),
+  const scrollElemToWatch_1 = document.getElementById('block_05'),
     watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
     rev1 = new RevealFx(scrollElemToWatch_1, {
       revealSettings : {
@@ -190,7 +190,7 @@ function block_05() {
 
 setTimeout(block_06, 10);
 function block_06() {
-  var scrollElemToWatch_1 = document.getElementById('block_06'),
+  const scrollElemToWatch_1 = document.getElementById('block_06'),
       watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
       rev1 = new RevealFx(scrollElemToWatch_1, {
         revealSettings : {
@@ -222,7 +222,7 @@ function block_06() {
 
 setTimeout(block_07, 10);
 function block_07() {
-    var scrollElemToWatch_1 = document.getElementById('block_07'),
+    const scrollElemToWatch_1 = document.getElementById('block_07'),
       watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
       rev1 = new RevealFx(scrollElemToWatch_1, {
         revealSettings : {
