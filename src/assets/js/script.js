@@ -7,12 +7,15 @@ window.onload = function() {
 }
 
 /* nav */
-$('.toggle').click(function() {
-  $(this).toggleClass("active");
-  if($(this).hasClass('active')) {
-    $('.nav-contents').addClass('active');
+const toggle = document.querySelector('.toggle');
+const navContents = document.querySelector('.nav-contents');
+
+toggle.addEventListener('click', function() {
+  this.classList.toggle('active');
+  if (this.classList.contains('active')) {
+    navContents.classList.add('active');
   } else {
-    $('.nav-contents').removeClass('active');
+    navContents.classList.remove('active');
   }
 });
 
