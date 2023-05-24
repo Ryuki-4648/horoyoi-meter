@@ -1,18 +1,17 @@
-'use strict';
-
 const animation = (className) => {
-  $(className).each(function(){
-    const target = $(this).offset().top;
-    const scroll = $(window).scrollTop();
-    const windowHeight = $(window).height();
-    
-    if (scroll > target - windowHeight){
-      $(this).css('opacity','1');
-      $(this).css('transform','translateY(0)');
+  document.querySelectorAll(className).forEach((element) => {
+    const target = element.offsetTop;
+    const scroll = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+
+    if (scroll > target - windowHeight) {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
     }
-  })
-}
-$(window).scroll(function (){
+  });
+};
+
+window.addEventListener('scroll', () => {
   animation('.up');
   animation('.down');
 });

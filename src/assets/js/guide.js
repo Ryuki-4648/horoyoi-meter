@@ -1,8 +1,5 @@
-'use strict';
-
-setTimeout(title01, 10);
-function title01() {
-  let scrollElemToWatch_1 = document.getElementById('title01'),
+const blockRevealEffects = (targetElement) => {
+  const scrollElemToWatch_1 = document.getElementById(targetElement),
   watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -10),                
   rev1 = new RevealFx(scrollElemToWatch_1, {
     revealSettings : {
@@ -29,3 +26,4 @@ function title01() {
     watcher_1.destroy();
   });
 }
+setTimeout(blockRevealEffects('title01'), 10);

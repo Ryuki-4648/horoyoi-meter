@@ -34,4 +34,4 @@ function faq_title01() {
     rev1.reveal();
     watcher_1.destroy();
   });
-  }
+}

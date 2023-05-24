@@ -1,5 +1,3 @@
-'use strict';
-
 /* loading */
 window.onload = function() {
   const animation = document.getElementById('loading');
@@ -145,19 +143,16 @@ document.getElementById('result_button').onclick = function () {
   let blood_alc =  (alc_total / ( 833 * input_weight )) * 100;
 
   let error_message;
-  //let alcoholism;
   
   // 測定結果により文章と画像を切り替える
   if (input_weight > 0 && input_weight != '') {
     
     // 結果の文章
     document.getElementById('blood_alc').textContent = point(blood_alc , 2) + '%';
-    //document.getElementById('your_status').textContent = your_status;
     document.getElementById('pure_alc').textContent = pure_total;
     document.getElementById('error_message').textContent = error_message;
     document.getElementById('num_total').textContent = num_total + '本,';
     document.getElementById('cap_total').textContent = cap_total + 'ml';
-    //document.getElementById('alcoholism').textContent = alcoholism;
 
     if (blood_alc >= 0.02 && blood_alc < 0.05) {
       document.getElementById('your_status').textContent = ('爽快期');
