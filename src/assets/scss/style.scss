@@ -1,8 +1,6 @@
 @charset "utf-8";
 
-
 /* common */
-
 * {
   margin: 0;
   padding: 0;
@@ -49,16 +47,18 @@ input {
 .br-pc {
   display: none;
 }
-table th, table td {
-    box-sizing: border-box;
+table {
+  th, td {
+    box-sizing: border-box;  
+  }
 }
 #title01 {
-    font-size: 2em;
-    margin-bottom: 30px;
+  font-size: 2em;
+  margin-bottom: 30px;
 }
 #title02, #title03 {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 #title01, #title02, #title03 {
   display: inline-block;
@@ -106,10 +106,10 @@ table th, table td {
     }
     .step-pc {
         width: 80px;
-        vertical-align: middle;
-        transform: rotate(-10deg);
-        text-align: center;
-        display: inline-block;
+      vertical-align: middle;
+      transform: rotate(-10deg);
+      text-align: center;
+      display: inline-block;
     }
     .step-sp img {
         display: none;
@@ -148,6 +148,10 @@ nav {
   z-index: 1000;
   background-image: url(../img/icon-1.png);
   background-repeat: no-repeat;
+  transition: all .3s;
+  &:hover {
+    opacity: .7;
+  }
   &.active {
     background-image: url(../img/icon-2.png);
   }
@@ -244,24 +248,26 @@ nav {
     nav li a::before {
         content: '';
         position: absolute;
-        bottom: -5px;
-        left: 0;
+        bottom: -13px;
+        left: 50%;
+        transform: translateX(-50%);
         display: block;
         width: 0;
-        height: 3px;
+        height: 2px;
         background-color: #1f1f1f;
         transition: width 0.3s;
     }
-    nav li a:hover {
-    }
     nav li a:hover::before {
-        width: 100%;
+        width: 30px;
     }
     nav .menu {
         text-align: center;
     }
     .svg {
-        width: 100%;
+      width: 100%;
+      path {
+        fill: #f5ee5d;
+      }
     }
     .svg-wrap {
         display: block;
@@ -520,9 +526,32 @@ nav {
     background-color: #f5ee5d;
     text-align: center;
     width: 100%;
+    @media screen and (min-width: 768px) {
+      display: block;
+      width: 100%;
+    }
+    th {
+      @media screen and (min-width: 768px) {
+        width: 150px;
+        padding: 20px 0;
+      }
+    }
+  }
+  .type {
+    @media screen and (min-width: 768px) {
+      font-size: 0.8em;
+    }
+  }
+  th {
+    @media screen and (min-width: 768px) {
+      border-right: solid 3px #fafafa;
+    }
   }
   tr {
     border-bottom: solid 20px #fafafa;
+    @media screen and (min-width: 768px) {
+      border-bottom: solid 3px #fafafa;
+    }
   }
   td {
     text-align: center;
@@ -530,6 +559,13 @@ nav {
     width: 100%;
     display: block;
     padding: 20px;
+    @media screen and (min-width: 768px) {
+      width: 150px;
+      display: inline-block;
+      height: 70px;
+      border-right: solid 3px #fafafa;
+      padding: 10px 0 10px 10px;
+    }
     &.type {
       background-color: #f5ee5d;
       text-align: left;
@@ -558,6 +594,9 @@ nav {
   font-size: 0.9em;
   font-weight: bold;
   margin-right: 10px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 #title03 {
@@ -568,37 +607,10 @@ nav {
   }
 }
 
-@media screen and (min-width: 768px) {
-    .list .index {
-        display: block;
-        width: 100%;
-    }
-    .list tr {
-        border-bottom: solid 3px #fafafa;
-    }
-    .list .index th {
-        width: 150px;
-        padding: 20px 0;
-    }
-    .list th {
-        border-right: solid 3px #fafafa;
-    }
-    .percent-sp, .pure-sp {
-        display: none;
-    }
-    .list td {
-        width: 150px;
-        display: inline-block;
-        height: 70px;
-        border-right: solid 3px #fafafa;
-        padding: 10px 0 10px 10px;
-    }
-    .list .percent, .list .pure {
-        line-height: 50px;
-    }
-    .list .type {
-        font-size: 0.8em;
-    }
+.list .percent, .list .pure {
+  @media screen and (min-width: 768px) {
+    line-height: 50px;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -661,7 +673,7 @@ nav {
     button {
       background-color: #f5ee5d;
       margin-bottom: 20px;
-      border: 3px solid #f5ee5d;
+      border: none;
       font-size: 1.3em;
       &:hover {
         background-color: #fcfac0;
@@ -672,7 +684,7 @@ nav {
   .reset {
     button {
       background-color: #ddd;
-      border: 3px solid #ddd;
+      border: none;
       font-size: 1.3em;
       &:hover {
         background-color: #f5ee5d;
@@ -891,6 +903,9 @@ nav {
   overflow: hidden;
   @media screen and (min-width: 1024px) {
     height: 350px;
+  }
+  path {
+    fill: #f5ee5d;
   }
 }
 .block-revealer__element {

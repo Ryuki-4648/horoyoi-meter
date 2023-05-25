@@ -69,77 +69,77 @@ document.getElementById('season_message').textContent = season_message;
 
 document.getElementById('result_button').onclick = function () {
   // 入力された「体重」を取得
-  let input_weight = parseInt(document.getElementById('input_weight').value);
+  const input_weight = parseInt(document.getElementById('input_weight').value);
 
   // 入力されたお酒の「本数」を取得
-  let num_beer = Math.floor(document.getElementById('num_beer').value);
-  let num_whisky = Math.floor(document.getElementById('num_whisky').value);
-  let num_high = Math.floor(document.getElementById('num_high').value);
-  let num_nihon = Math.floor(document.getElementById('num_nihon').value);
-  let num_shochu = Math.floor(document.getElementById('num_shochu').value);
-  let num_glasswine = Math.floor(document.getElementById('num_glasswine').value);
-  let num_bottlewine = Math.floor(document.getElementById('num_bottlewine').value);
-  let num_awamori = Math.floor(document.getElementById('num_awamori').value);
-  let num_habu = Math.floor(document.getElementById('num_habu').value);
+  const num_beer = Math.floor(document.getElementById('num_beer').value);
+  const num_whisky = Math.floor(document.getElementById('num_whisky').value);
+  const num_high = Math.floor(document.getElementById('num_high').value);
+  const num_nihon = Math.floor(document.getElementById('num_nihon').value);
+  const num_shochu = Math.floor(document.getElementById('num_shochu').value);
+  const num_glasswine = Math.floor(document.getElementById('num_glasswine').value);
+  const num_bottlewine = Math.floor(document.getElementById('num_bottlewine').value);
+  const num_awamori = Math.floor(document.getElementById('num_awamori').value);
+  const num_habu = Math.floor(document.getElementById('num_habu').value);
 
   // お酒の合計本数
-  let num_total = num_beer + num_whisky + num_high + num_glasswine + num_bottlewine + num_nihon + num_shochu + num_awamori + num_habu;
+  const num_total = num_beer + num_whisky + num_high + num_glasswine + num_bottlewine + num_nihon + num_shochu + num_awamori + num_habu;
 
   // 各アルコールの量 = 本数 × 容量
-  let cap_beer = num_beer * 350;
-  let cap_whisky = num_whisky * 30;
-  let cap_high = num_high * 350;
-  let cap_nihon = num_nihon * 180;
-  let cap_shochu = num_shochu * 110;
-  let cap_glasswine = num_glasswine * 125;
-  let cap_bottlewine = num_bottlewine * 750;
-  let cap_awamori = num_awamori * 90;
-  let cap_habu = num_habu * 30;
+  const cap_beer = num_beer * 350;
+  const cap_whisky = num_whisky * 30;
+  const cap_high = num_high * 350;
+  const cap_nihon = num_nihon * 180;
+  const cap_shochu = num_shochu * 110;
+  const cap_glasswine = num_glasswine * 125;
+  const cap_bottlewine = num_bottlewine * 750;
+  const cap_awamori = num_awamori * 90;
+  const cap_habu = num_habu * 30;
 
   // 各アルコール量の合計
-  let cap_total = cap_beer + cap_whisky + cap_high + cap_glasswine + cap_bottlewine + cap_nihon + cap_shochu + cap_awamori + cap_habu;
+  const cap_total = cap_beer + cap_whisky + cap_high + cap_glasswine + cap_bottlewine + cap_nihon + cap_shochu + cap_awamori + cap_habu;
 
   // 純アルコール量 容量 × 度数 × 比重0.8
-  let pure_beer = Math.floor(num_beer * 350 * 0.05 * 0.8);
-  let pure_whisky = Math.floor(num_whisky * 30 * 0.4 * 0.8);
-  let pure_high = Math.floor(num_high * 350 * 0.07 * 0.8);
-  let pure_nihon = Math.floor(num_nihon * 180 * 0.15 * 0.8);
-  let pure_shochu = Math.floor(num_shochu * 110 * 0.25 * 0.8);
-  let pure_glasswine = Math.floor(num_glasswine * 125 * 0.12 * 0.8);
-  let pure_bottlewine = Math.floor(num_bottlewine * 750 * 0.12 * 0.8);
-  let pure_awamori = Math.floor(num_awamori * 90 * 0.3 * 0.8);
-  let pure_habu = Math.floor(num_habu * 30 * 0.25 * 0.8);
+  const pure_beer = Math.floor(num_beer * 350 * 0.05 * 0.8);
+  const pure_whisky = Math.floor(num_whisky * 30 * 0.4 * 0.8);
+  const pure_high = Math.floor(num_high * 350 * 0.07 * 0.8);
+  const pure_nihon = Math.floor(num_nihon * 180 * 0.15 * 0.8);
+  const pure_shochu = Math.floor(num_shochu * 110 * 0.25 * 0.8);
+  const pure_glasswine = Math.floor(num_glasswine * 125 * 0.12 * 0.8);
+  const pure_bottlewine = Math.floor(num_bottlewine * 750 * 0.12 * 0.8);
+  const pure_awamori = Math.floor(num_awamori * 90 * 0.3 * 0.8);
+  const pure_habu = Math.floor(num_habu * 30 * 0.25 * 0.8);
 
   // 純アルコール量の合計
-  let pure_total = Math.floor(pure_beer + pure_whisky + pure_high + pure_nihon + pure_shochu + pure_glasswine + pure_bottlewine + pure_awamori + pure_habu) + 'g';
+  const pure_total = Math.floor(pure_beer + pure_whisky + pure_high + pure_nihon + pure_shochu + pure_glasswine + pure_bottlewine + pure_awamori + pure_habu) + 'g';
 
   // お酒の本数を入力したら、計算して「純アルコール量」を表示する
-  document.getElementById('output_beer').textContent = pure_beer + 'g';
-  document.getElementById('output_whisky').textContent = pure_whisky + 'g';
-  document.getElementById('output_high').textContent = pure_high + 'g';
-  document.getElementById('output_nihon').textContent = pure_nihon + 'g';
-  document.getElementById('output_shochu').textContent = pure_shochu + 'g';
-  document.getElementById('output_glasswine').textContent = pure_glasswine + 'g';
-  document.getElementById('output_bottlewine').textContent = pure_bottlewine + 'g';
-  document.getElementById('output_awamori').textContent = pure_awamori + 'g';
-  document.getElementById('output_habu').textContent = pure_habu + 'g';
+  document.getElementById('output_beer').textContent = `${pure_beer}g`;
+  document.getElementById('output_whisky').textContent = `${pure_whisky}g`;
+  document.getElementById('output_high').textContent = `${pure_high}g`;
+  document.getElementById('output_nihon').textContent = `${pure_nihon}g`;
+  document.getElementById('output_shochu').textContent = `${pure_shochu}g`;
+  document.getElementById('output_glasswine').textContent = `${pure_glasswine}g`;
+  document.getElementById('output_bottlewine').textContent = `${pure_bottlewine}g`;
+  document.getElementById('output_awamori').textContent = `${pure_awamori}g`;
+  document.getElementById('output_habu').textContent = `${pure_habu}g`;
 
   // 本数 × 容量 × 濃度
-  let alc_beer = num_beer * 350 * 0.05;
-  let alc_whisky = num_whisky * 30 * 0.4;
-  let alc_high = num_high * 350 * 0.07;
-  let alc_nihon = num_nihon * 180 * 0.15;
-  let alc_shochu = num_shochu * 110 * 0.25;
-  let alc_glasswine = num_glasswine * 125 * 0.12;
-  let alc_bottlewine = num_bottlewine * 750 * 0.12;
-  let alc_awamori = num_awamori * 90 * 0.3;
-  let alc_habu = num_habu * 30 *0.25;
+  const alc_beer = num_beer * 350 * 0.05;
+  const alc_whisky = num_whisky * 30 * 0.4;
+  const alc_high = num_high * 350 * 0.07;
+  const alc_nihon = num_nihon * 180 * 0.15;
+  const alc_shochu = num_shochu * 110 * 0.25;
+  const alc_glasswine = num_glasswine * 125 * 0.12;
+  const alc_bottlewine = num_bottlewine * 750 * 0.12;
+  const alc_awamori = num_awamori * 90 * 0.3;
+  const alc_habu = num_habu * 30 *0.25;
 
   // 合計
-  let alc_total = alc_beer + alc_whisky + alc_high + alc_glasswine + alc_bottlewine + alc_nihon + alc_shochu + alc_awamori + alc_habu;
+  const alc_total = alc_beer + alc_whisky + alc_high + alc_glasswine + alc_bottlewine + alc_nihon + alc_shochu + alc_awamori + alc_habu;
 
   // 血中アルコール濃度:飲酒量（ml）× アルコール度数（%）／ 833 × 体重（kg）
-  let blood_alc =  (alc_total / ( 833 * input_weight )) * 100;
+  const blood_alc =  (alc_total / ( 833 * input_weight )) * 100;
 
   let error_message;
   
@@ -193,25 +193,29 @@ function point(num, digit) {
 }
 
 // 入力値のリセット
-document.getElementById('reset_button').onclick = function () {
+document.getElementById('reset_button').addEventListener('click', function() {
   document.alc_form.reset();
-  document.getElementById('main').src = "/assets/img/soukai-d.jpg"; // リセットで爽快期に戻る
-  document.getElementById('message_1').textContent = '';
-  document.getElementById('cap_total').textContent = '';
-  document.getElementById('blood_alc').textContent = '??' + '%';
-  document.getElementById('your_status').textContent = '??' + '期';
-  document.getElementById('pure_alc').textContent = '??'+ 'ml';
-  document.getElementById('num_total').textContent = '??' + '本';
-  document.getElementById('alcoholism').textContent = '';
-  document.getElementById('output_beer').textContent = '';
-  document.getElementById('output_whisky').textContent = '';
-  document.getElementById('output_high').textContent = '';
-  document.getElementById('output_nihon').textContent = '';
-  document.getElementById('output_shochu').textContent = '';
-  document.getElementById('output_glasswine').textContent = '';
-  document.getElementById('output_bottlewine').textContent = '';
-  document.getElementById('output_awamori').textContent = '';
-  document.getElementById('output_habu').textContent = '';
+  document.getElementById('main').src = "/assets/img/soukai-d.jpg";
+  resetTextContentById('message_1');
+  resetTextContentById('cap_total');
+  resetTextContentById('blood_alc', '??%');
+  resetTextContentById('your_status', '??期');
+  resetTextContentById('pure_alc', '??ml');
+  resetTextContentById('num_total', '??本');
+  resetTextContentById('alcoholism');
+  resetTextContentById('output_beer');
+  resetTextContentById('output_whisky');
+  resetTextContentById('output_high');
+  resetTextContentById('output_nihon');
+  resetTextContentById('output_shochu');
+  resetTextContentById('output_glasswine');
+  resetTextContentById('output_bottlewine');
+  resetTextContentById('output_awamori');
+  resetTextContentById('output_habu');
+});
+
+function resetTextContentById(elementId, defaultValue = '') {
+  document.getElementById(elementId).textContent = defaultValue;
 }
 
 // 画像の切り替え
