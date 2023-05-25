@@ -128,7 +128,7 @@ nav {
   color: #1f1f1f;
   transition: all 0.8s;
   -webkit-overflow-scrolling: touch;
-  background: #faf139;
+  background: #f5ee5d;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
@@ -298,7 +298,7 @@ nav {
     width: 100vw;
     height: 100vh;
     transition: all 1s;
-    background-color: #faf139;
+    background-color: #f5ee5d;
     position: fixed;
     top: 0;
     left: 0;
@@ -449,7 +449,7 @@ nav {
     width: 100%;
     display: block;
     padding: 15px 0;
-    background-color: #faf139;
+    background-color: #f5ee5d;
     @media screen and (min-width: 768px) {
       width: 50%;
       display: inline-block;
@@ -517,7 +517,7 @@ nav {
   }
   .index {
     display: none;
-    background-color: #faf139;
+    background-color: #f5ee5d;
     text-align: center;
     width: 100%;
   }
@@ -531,17 +531,17 @@ nav {
     display: block;
     padding: 20px;
     &.type {
-      background-color: #faf139;
+      background-color: #f5ee5d;
       text-align: left;
     }
   }
   input {
     width: 170px;
-    @media screen and (min-width: 768px) {
-      width: 90px;
-    }
     @media screen and (min-width: 350px) {
       width: 200px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 90px;
     }
   }
 }
@@ -659,9 +659,9 @@ nav {
   }
   .show {
     button {
-      background-color: #faf139;
+      background-color: #f5ee5d;
       margin-bottom: 20px;
-      border: 3px solid #faf139;
+      border: 3px solid #f5ee5d;
       font-size: 1.3em;
       &:hover {
         background-color: #fcfac0;
@@ -675,7 +675,7 @@ nav {
       border: 3px solid #ddd;
       font-size: 1.3em;
       &:hover {
-        background-color: #faf139;
+        background-color: #f5ee5d;
         color: #1f1f1f;
       }
     }
@@ -691,6 +691,7 @@ nav {
     line-height: 70px;
     transition: all .3s;
     font-size: 0.9em;
+    cursor: pointer;
   }
 }
 .result-message {
@@ -713,19 +714,19 @@ nav {
 }
 
 #your_status {
-    font-weight: bold;
-    font-size: 2em;
-    color: #de123e;
+  font-weight: bold;
+  font-size: 2em;
+  color: #de123e;
 }
 #num_total {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 .result-message span {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 #alcoholism {
-    color: #de123e;
-    font-size: 1.1em;
+  color: #de123e;
+  font-size: 1.1em;
 }
 
 @media screen and (min-width: 768px) {
@@ -780,8 +781,13 @@ nav {
       width: 100%;
     }
     li {
+      cursor: pointer;
+      transition: all .3s;
       @media screen and (min-width: 1024px) {
         margin-right: 10px;
+      }
+      &:hover {
+        opacity: .7;
       }
     }
   }
@@ -928,9 +934,11 @@ __________________________________________*/
     background-position: 5% 50%;
     background-size: 30px;
     font-size: 1em;
-    border: 2px solid #faf139;
+    border: 2px solid #f5ee5d;
     padding: 20px 50px 20px 20px;
-    
+    @media screen and (min-width: 1024px) {
+      padding: 20px 0 20px 20px;
+    }
     &:after {
       content: "";
       position: absolute;
@@ -941,6 +949,12 @@ __________________________________________*/
       height: 10px;
       right: 20px;
       top: 25px;
+      @media screen and (min-width: 1024px) {
+        width: 20px;
+        height: 20px;
+        right: 30px;
+        top: 20px;
+      }
     }
     &.arrow {
       &:after {
@@ -955,22 +969,34 @@ __________________________________________*/
         height: 10px;
         right: 20px;
         top: 30px;
+        @media screen and (min-width: 1024px) {
+          width: 20px;
+          height: 20px;
+          right: 30px;
+          top: 30px;
+        }
       }
     }
   }
   dd {
-  background-repeat: no-repeat;
-  background-position: 5% 50%;
-  margin-left: 0px;
-  background-size: 30px;
-  font-size: 0.9em;
-  padding: 20px;
-  line-height: 2;
-  background-color: #faf139;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    margin-left: 0px;
+    background-size: 30px;
+    font-size: 0.9em;
+    padding: 20px;
+    line-height: 2;
+    background-color: #f5ee5d;
+    @media screen and (min-width: 1024px) {
+      padding-top: 30px;
+    }
   }
 
   .wrap {
     width: 90%;
+    @media screen and (min-width: 1024px) {
+      width: 80%;
+    }
   }
 
   a {
@@ -988,34 +1014,9 @@ __________________________________________*/
   margin-bottom: 30px;
   color: #777;
   font-weight: bold;
-}
-
-@media screen and (min-width: 1024px) {
-  .faq dt {
-      padding: 20px 0 20px 20px;
-  }
-  .faq dd {
-      padding-top: 30px;
-  }
-  .faq .wrap {
-      width: 80%;
-  }
-  #faq_title01 {
-      margin-bottom: 60px;
-      font-size: 2em;
-  }
-  dt:after {
-      width: 20px;
-      height: 20px;
-      right: 30px;
-      top: 20px;
-  }
-  
-  dt.arrow:after {
-      width: 20px;
-      height: 20px;
-      right: 30px;
-      top: 30px;
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 60px;
+    font-size: 2em;
   }
 }
 
@@ -1030,10 +1031,16 @@ __________________________________________*/
     text-align: center;
     margin-bottom: 10px;
     color: #888;
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 20px;
+    }
   }
   ul {
     li {
       margin-bottom: 30px;
+      @media screen and (min-width: 1024px) {
+        margin-bottom: 80px;
+      }
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -1045,10 +1052,11 @@ __________________________________________*/
     line-height: 1.8;
     letter-spacing: 0.05em;
     color: #1f1f1f;
+    @media screen and (min-width: 1024px) {
+      font-size: 1em;
+      line-height: 1.8;
+    }
   }
-}
-.guide-notice {
-  font-size: 0.8em;
   a {
     color: #26baf0;
     transition: all .3s;
@@ -1057,26 +1065,16 @@ __________________________________________*/
     }
   }
 }
+.guide-notice {
+  font-size: 0.8em;
+}
 
 .marker{
-  background: linear-gradient(transparent 60%, #faf139 70%);
+  background: linear-gradient(transparent 60%, #f5ee5d 70%);
   width: 60%;
 }
 .small-number {
   font-size: 0.6em;
-}
-
-@media screen and (min-width: 1024px){
-  .guide-wrap h2 {
-      margin-bottom: 20px;
-  }
-  .guide-wrap ul li {
-      margin-bottom: 80px;
-  }
-  .guide-wrap p {
-      font-size: 1em;
-      line-height: 1.8;
-  }
 }
 
 
@@ -1091,9 +1089,9 @@ __________________________________________*/
 }
 .banner {
   margin: 0 auto 40px;
-}
-.banner img {
-  width: 100%;
+  img {
+    width: 100%;
+  }
 }
 .nomi-wrap {
   width: 90%;
@@ -1105,144 +1103,151 @@ __________________________________________*/
   justify-content: space-between;
   margin: 0 auto 40px;
   width: 100%;
-}
-.nomi-button a{
-  transition: all .3s;
-}
-.nomi-button a:hover{
-  opacity: .65;
-}
-
-.nomi-button li {
-  width: 100%;
-}
-.nomi-button img {
-  width: 100%;
+  a {
+    transition: all .3s;
+    &:hover {
+      opacity: .65;
+    }
+  }
+  li {
+    width: 100%;
+  }
+  img {
+    width: 100%;
+  }
 }
 
 .main-image {
   margin: 0 auto 50px;
+  img {
+    width: 100%;
+  }
 }
-.main-image img {
-  width: 100%;
-}
-
 /* 宅飲み・外飲み　共通 */
-h2 {
-  margin: 0 auto 30px;
-  text-align: center;
-}
-h2 img {
-  width: 100%;
-}
-h3 {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  border-bottom: 3px dotted #26baf0;
-  color: #1f1f1f;
-}
-#block_01, #block_02, #block_03, #block_04, #block_05, #block_06, #block_07 {
-  display: inline-block;
-}
 .takunomi, .sotonomi {
   margin-bottom: 50px;
+  h2 {
+    margin: 0 auto 30px;
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    border-bottom: 3px dotted #26baf0;
+    color: #1f1f1f;
+  }
+  #block_01, #block_02, #block_03, #block_04, #block_05, #block_06, #block_07 {
+    display: inline-block;
+  }
+  .main-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
 }
-.main-wrap .comment p {
-  width: 100%;
-  text-align: left;
-  font-size: 1.2em;
-  line-height: 2;
-  font-weight: bold;
-  color: #1f1f1f;
-  margin-bottom: 50px;
+
+.main-wrap {
+  .comment {
+    p {
+      width: 100%;
+      text-align: center;
+      font-size: 1.2em;
+      line-height: 2;
+      font-weight: bold;
+      color: #1f1f1f;
+      margin-bottom: 50px;
+    }
+  }
 }
+
 .lineup {
   margin-bottom: 50px;
-}
-.lineup li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-.lineup img {
-  width: 100%;
-  margin-bottom: 20px;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 .lineup-comment {
   width: 100%;
-}
-.lineup-comment p {
-  display:inline-block;
-  vertical-align: middle;
-  font-weight: bold;
-  color:#404040;
-  letter-spacing: 0.05em;
-  line-height: 2;
-  font-size: 0.9em;
-}
-.lineup .second {
-  flex-direction: column-reverse;
-  margin-bottom: 0;
+  p {
+    display:inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    color:#404040;
+    letter-spacing: 0.05em;
+    line-height: 2;
+    font-size: 0.9em;
+  }
+  .second {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
 }
 
 /* 宅飲み */
-.main-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.takunomi .main-wrap .image {
-  position: absolute;
-  right: 0;
-  bottom: 380px;
-  text-align: right;
-}
-.takunomi .main-wrap .image img {
-  width: 50%;
+.takunomi {
+  .image {
+    position: absolute;
+    right: 0;
+    bottom: 380px;
+    text-align: right;
+    img {
+      width: 50%;
+    }
+  }
 }
 
 .ate-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  li {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  p {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #404040;
+    line-height: 2;
+  }
+  h3 {
+    text-align: center;
+  }
 }
-.ate-list li {
-  width: 100%;
-  margin-bottom: 50px;
-}
-.ate-list img {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.ate-list p {
-  width: 100%;
-  font-size: 0.9em;
-  font-weight: bold;
-  color: #404040;
-  line-height: 2;
-}
-.ate-list h3 {
-  text-align: center;
-}
-
 
 
 /* 外飲み */
-.sotonomi .main-wrap .image {
-  position: absolute;
-  left: 0;
-  bottom: 400px;
+.sotonomi {
+  .main-wrap {
+    .image {
+      position: absolute;
+      left: 0;
+      bottom: 400px;
+      img {
+        width: 50%;
+      }
+    }
+  }
+  .lineup {
+    margin-bottom: 0;
+  }
 }
-.sotonomi .main-wrap .image img {
-  width: 50%;
-}
-.sotonomi .lineup {
-  margin-bottom: 0;
-}
-
 
 /* fade 上に上がる */
 .up {
@@ -1259,36 +1264,27 @@ h3 {
 
 
 .float-up {
-  animation-name: float-up;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-duration: 1.6s;
+  animation: float-up 1.6s ease-in-out infinite alternate;
 }
 @keyframes float-up {
   0% {
-      transform: translate(0,0px);
+    transform: translate(0,0px);
   }
 
   100% {
-      transform: translate(0,-15px)
+    transform: translate(0,-15px)
   }
 }
 
 .float-down {
-  animation-name: float-down;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-duration: 1.6s;
+  animation: float-down 1.6s ease-in-out infinite alternate;
 }
 @keyframes float-down {
   0% {
-      transform: translate(0,-15px);
+    transform: translate(0,-15px);
   }
-
   100% {
-      transform: translate(0,0px)
+    transform: translate(0,0px)
   }
 }
 

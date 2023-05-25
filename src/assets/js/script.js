@@ -47,9 +47,9 @@ if (season === 1) {
 } else if (season === 4) {
   season_message = ('新入生や新社会人のみなさん、おめでとうございます。歓迎会シーズンがやってきました。');
 } else if (season === 5) {
-  season_message = ('新しい環境には慣れてきましたか？疲れをためると酔いやすくなります。');
+  season_message = ('新しい環境には慣れてきましたか？疲れを溜めすぎると酔いやすくなります。飲み過ぎに注意！');
 } else if (season === 6) {
-  season_message = ('梅酒を漬ける作業は「梅雨」の風物詩。梅酒を飲んで乗り切りましょう。');
+  season_message = ('梅酒を漬ける作業は「梅雨」の風物詩。おいしい梅酒を飲んで暑さを乗り切りましょう。');
 } else if (season === 7) {
   season_message = ('梅雨が終わり、暑い季節がやってきます。ビールや冷酒がおいしい季節になりました。');
 } else if (season === 8) {
@@ -61,13 +61,12 @@ if (season === 1) {
 } else if (season === 11) {
   season_message = ('11月頃から日本酒の新酒シーズンが始まります。酒蔵巡りはいかがでしょうか。');
 } else if (season === 12) {
-  season_message = ('一年間お疲れ様です。忘年会、新年会シーズンがやってきます。');
+  season_message = ('一年間お疲れ様です！忘年会、新年会シーズンがやってきます。');
 } else {
 }
 
 document.getElementById('season_message').textContent = season_message;
 
-// =============== 計算 =============== //
 document.getElementById('result_button').onclick = function () {
   // 入力された「体重」を取得
   let input_weight = parseInt(document.getElementById('input_weight').value);
