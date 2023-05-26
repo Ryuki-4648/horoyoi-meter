@@ -15,7 +15,3 @@ window.addEventListener('scroll', () => {
   animation('.up');
   animation('.down');
 });
-
-
-
-
