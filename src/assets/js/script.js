@@ -28,14 +28,14 @@ $('#wave').wavify({
 
 $('#nav-wave').wavify({
   height: 60,
-  bones: 5, // 丸み
-  amplitude: 40, // 振幅
+  bones: 5,
+  amplitude: 40,
   color: '#faf139',
   speed: .25
 });
 
 // ========== 月ごとのメッセージ ========== //
-let season = new Date().getMonth() + 1; // 「月」を0から11の整数で返す
+let season = new Date().getMonth() + 1;
 let season_message;
 
 if (season === 1) {
@@ -67,7 +67,7 @@ if (season === 1) {
 
 document.getElementById('season_message').textContent = season_message;
 
-document.getElementById('result_button').onclick = function () {
+document.getElementById('result_button').addEventListener('click', function () {
   // 入力された「体重」を取得
   const input_weight = parseInt(document.getElementById('input_weight').value);
 
@@ -183,7 +183,7 @@ document.getElementById('result_button').onclick = function () {
     window.alert('体重を入力してください。');
     document.getElementById('message_1').textContent = '※体重を0以上の半角数字で入力してください。';
   }
-}
+});
 
 
 // 血中アルコール濃度 小数点第2位で切り捨て
