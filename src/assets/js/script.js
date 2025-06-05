@@ -155,27 +155,27 @@ document.getElementById('result_button').addEventListener('click', function () {
 
     if (blood_alc >= 0.02 && blood_alc < 0.05) {
       document.getElementById('your_status').textContent = ('爽快期');
-      document.getElementById('main').src = "/assets/img/soukai-d.jpg";
+      document.getElementById('main').src = "assets/img/soukai-d.jpg";
     } else if (blood_alc >= 0.05 && blood_alc < 0.1) {
       document.getElementById('your_status').textContent = ('ほろよい期');
-      document.getElementById('main').src = "/assets/img/horoyoi-d.jpg";
+      document.getElementById('main').src = "assets/img/horoyoi-d.jpg";
     } else if (blood_alc >= 0.1 && blood_alc < 0.15) {
       document.getElementById('your_status').textContent = ('酩酊初期');
-      document.getElementById('main').src = "/assets/img/shoki-d.jpg";
+      document.getElementById('main').src = "assets/img/shoki-d.jpg";
     } else if (blood_alc >= 0.15 && blood_alc < 0.3) {
       document.getElementById('your_status').textContent = ('酩酊期');
-      document.getElementById('main').src = "/assets/img/meitei-d.jpg";
+      document.getElementById('main').src = "assets/img/meitei-d.jpg";
     } else if (blood_alc >= 0.3 && blood_alc < 0.4) {
       document.getElementById('your_status').textContent = ('泥酔期');
-      document.getElementById('main').src = "/assets/img/deisui-d.jpg";
+      document.getElementById('main').src = "assets/img/deisui-d.jpg";
     } else if (blood_alc >= 0.4 && blood_alc < 0.5) {
       document.getElementById('your_status').textContent = ('昏睡期');
       document.getElementById('alcoholism').textContent = 'アルコール中毒の危険性があります。';
-      document.getElementById('main').src = "/assets/img/konsui-d.jpg";
+      document.getElementById('main').src = "assets/img/konsui-d.jpg";
     } else if (blood_alc >= 0.5 ) {
       document.getElementById('your_status').textContent = ('昏睡期または測定不能');
       document.getElementById('alcoholism').textContent = 'アルコール中毒の危険性があります。';
-      document.getElementById('main').src = "/assets/img/konsui-d.jpg";
+      document.getElementById('main').src = "assets/img/konsui-d.jpg";
     } else {
       document.getElementById('your_status').textContent = ('測定不能');
     }
@@ -195,7 +195,7 @@ function point(num, digit) {
 // 入力値のリセット
 document.getElementById('reset_button').addEventListener('click', function() {
   document.alc_form.reset();
-  document.getElementById('main').src = "/assets/img/soukai-d.jpg";
+  document.getElementById('main').src = "assets/img/soukai-d.jpg";
   resetTextContentById('message_1');
   resetTextContentById('cap_total');
   resetTextContentById('blood_alc', '??%');

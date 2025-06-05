@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWF8LG2FZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SWF8LG2FZN');
+    </script>
+
     <title>ご利用ガイド | 「ほろよいメーター」で酔い度をチェック。適量飲酒を心がけ、お酒をたのしく飲みましょう。</title>
 
     <!-- OGP -->
@@ -85,7 +95,7 @@
     <%- include(incFile + '_footer.ejs'); %>
 
     <%- include(incFile + '_js.ejs'); %>
-    <script src="/assets/js/guide.js"></script>
+    <script src="assets/js/guide.js"></script>
 
   </body>
 </html>

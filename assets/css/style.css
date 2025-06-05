@@ -1,0 +1,1477 @@
+@charset "UTF-8";
+/* common */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9ffa3;
+  font-family: "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ ゴシック", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.contents {
+  margin: 0 auto;
+  width: 90%;
+  background-color: #fafafa;
+  padding: 50px 0;
+}
+
+.inner {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.wrap {
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  border: 0px;
+  background: #fff;
+  height: 40px;
+  font-size: 110%;
+  text-align: right;
+  margin-right: 15px;
+  font-weight: bold;
+  color: #1f1f1f;
+}
+
+.br-sp {
+  display: block;
+}
+
+.br-pc {
+  display: none;
+}
+
+table th, table td {
+  box-sizing: border-box;
+}
+
+#title01 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+#title02, #title03 {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+#title01, #title02, #title03 {
+  display: inline-block;
+  font-weight: bold;
+  color: #777;
+}
+
+.step-pc {
+  display: none;
+}
+.step-pc img {
+  width: 80px;
+  vertical-align: top;
+  transform: rotate(-10deg);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .contents {
+    padding: 100px 0;
+  }
+  input {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contents {
+    width: 980px;
+  }
+  .inner {
+    width: 1000px;
+  }
+  .wrap {
+    width: 90%;
+  }
+  #title02, #title03 {
+    margin-bottom: 60px;
+    font-size: 1.5em;
+  }
+  .br-sp {
+    display: none;
+  }
+  .br-pc {
+    display: block;
+  }
+  .step-pc {
+    width: 80px;
+    vertical-align: middle;
+    transform: rotate(-10deg);
+    text-align: center;
+    display: inline-block;
+  }
+  .step-sp img {
+    display: none;
+  }
+}
+/* メニュー */
+nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  transform: translateX(100%) translateY(0%);
+  z-index: 999;
+  color: #1f1f1f;
+  transition: all 0.8s;
+  -webkit-overflow-scrolling: touch;
+  background: #f5ee5d;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+nav.active {
+  transform: translateX(0%) translateY(0%);
+}
+
+/* アイコンクリックで画像が変わる */
+.toggle {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  bottom: 25px;
+  right: 10px;
+  position: fixed;
+  z-index: 1000;
+  background-image: url(../img/icon-1.png);
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+.toggle:hover {
+  opacity: 0.7;
+}
+.toggle.active {
+  background-image: url(../img/icon-2.png);
+}
+
+.svg-wrap {
+  display: none;
+}
+
+.nav-inner {
+  margin: 0 auto;
+  padding: 40px 20px 0;
+  position: relative;
+}
+
+nav .title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+nav .title img {
+  width: 100%;
+}
+nav .menu {
+  text-align: center;
+  display: block;
+}
+nav ul {
+  display: inline-block;
+  width: 100%;
+}
+nav li {
+  margin-bottom: 30px;
+  text-align: center;
+}
+nav li:last-of-type {
+  margin-bottom: 0;
+}
+nav li a {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5em;
+  color: #1f1f1f;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+nav li a:hover {
+  color: #777;
+}
+nav li a .fas {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  color: #1f1f1f;
+  transition: all 0.3s;
+}
+nav li a:hover .fas {
+  right: -10px;
+}
+
+@media screen and (min-width: 400px) {
+  nav .title img {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-inner {
+    padding: 40px 80px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nav-inner {
+    padding: 50px;
+  }
+  nav .title {
+    margin-bottom: 20px;
+  }
+  nav .title img {
+    width: 250px;
+  }
+  nav ul {
+    width: auto;
+  }
+  nav li {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  nav li a {
+    font-size: 1.2em;
+    position: relative;
+    display: inline;
+  }
+  nav li a::before {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #1f1f1f;
+    transition: width 0.3s;
+  }
+  nav li a:hover::before {
+    width: 30px;
+  }
+  nav .menu {
+    text-align: center;
+  }
+  .svg {
+    width: 100%;
+  }
+  .svg path {
+    fill: #f5ee5d;
+  }
+  .svg-wrap {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: -145px;
+    left: 0;
+  }
+  nav {
+    height: 80%;
+    width: 100%;
+    transform: translateX(0%) translateY(120%);
+  }
+  nav.active {
+    transform: translateX(0%) translateY(0%);
+  }
+  nav li a .fas {
+    display: none;
+  }
+  .toggle {
+    width: 100px;
+    height: 100px;
+    bottom: 10px;
+  }
+}
+/* ローディング */
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #f5ee5d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loading-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /*margin: 100px auto 0;*/
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page {
+  display: grid;
+}
+
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/* ヘッダー */
+.header {
+  background-color: #fafafa;
+  margin-bottom: 80px;
+  height: 45px;
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    margin-bottom: 100px;
+    height: 50px;
+    padding: 15px 0;
+  }
+}
+.header img {
+  width: 200px;
+  position: absolute;
+  top: -2px;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1024px) {
+  .header img {
+    width: 300px;
+    top: -10px;
+  }
+}
+.header img:hover {
+  opacity: 0.5;
+}
+.header span {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .header span {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 340px;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    color: #777;
+    font-weight: bold;
+  }
+}
+
+.header-wrap {
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+}
+
+/* イントロ文章 */
+.intro {
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+  .intro {
+    margin-bottom: 100px;
+  }
+}
+.intro p {
+  line-height: 1.8;
+  color: #777;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+@media screen and (min-width: 768px) {
+  .intro p {
+    font-size: 1em;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+.intro .contents {
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .intro .contents {
+    text-align: center;
+  }
+}
+.intro #title01 {
+  text-align: center;
+}
+
+.intro-wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#season_message {
+  color: #26baf0;
+  margin-bottom: 10px;
+}
+
+/* 体重入力 */
+.weight {
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+  .weight {
+    margin-bottom: 100px;
+  }
+}
+.weight table {
+  width: 90%;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.weight th {
+  width: 100%;
+  display: block;
+  padding: 15px 0;
+  background-color: #f5ee5d;
+}
+@media screen and (min-width: 768px) {
+  .weight th {
+    width: 50%;
+    display: inline-block;
+    padding: 30px 0;
+  }
+}
+.weight td {
+  width: 100%;
+  display: block;
+  padding: 20px;
+  background-color: #fffede;
+  text-align: center;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .weight td {
+    width: 50%;
+    display: inline-block;
+    padding: 20px 0;
+  }
+}
+.weight .contents {
+  margin-bottom: 10px;
+}
+.weight .comment {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1024px) {
+  .weight .comment {
+    width: 1000px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .weight .comment {
+    width: 90%;
+  }
+}
+.weight input {
+  width: 170px;
+}
+@media screen and (min-width: 768px) {
+  .weight input {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 350px) {
+  .weight input {
+    width: 200px;
+  }
+}
+
+#message_1 {
+  font-weight: bold;
+  color: #a10603;
+}
+
+/* alcohol */
+.alcohol {
+  margin-bottom: 50px;
+}
+
+/* 入力テーブル */
+.list {
+  width: 90%;
+  margin: 0 auto;
+  font-weight: bold;
+  border-collapse: collapse;
+  color: #1f1f1f;
+  table-layout: fixed;
+}
+@media screen and (min-width: 768px) {
+  .list {
+    width: 600px;
+  }
+}
+.list .index {
+  display: none;
+  background-color: #f5ee5d;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .list .index {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .list .index th {
+    width: 150px;
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .list .type {
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .list th {
+    border-right: solid 3px #fafafa;
+  }
+}
+.list tr {
+  border-bottom: solid 20px #fafafa;
+}
+@media screen and (min-width: 768px) {
+  .list tr {
+    border-bottom: solid 3px #fafafa;
+  }
+}
+.list td {
+  text-align: center;
+  background-color: #fcfac0;
+  width: 100%;
+  display: block;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .list td {
+    width: 150px;
+    display: inline-block;
+    height: 70px;
+    border-right: solid 3px #fafafa;
+    padding: 10px 0 10px 10px;
+  }
+}
+.list td.type {
+  background-color: #f5ee5d;
+  text-align: left;
+}
+.list input {
+  width: 170px;
+}
+@media screen and (min-width: 350px) {
+  .list input {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .list input {
+    width: 90px;
+  }
+}
+
+.alcohol .note {
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.percent-sp, .pure-sp {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+@media screen and (min-width: 768px) {
+  .percent-sp, .pure-sp {
+    display: none;
+  }
+}
+
+#title03 img {
+  width: 80px;
+  vertical-align: middle;
+  transform: rotate(-10deg);
+}
+
+@media screen and (min-width: 768px) {
+  .list .percent, .list .pure {
+    line-height: 50px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .list {
+    width: 680px;
+  }
+  .list .index th {
+    width: 170px;
+  }
+  .list td {
+    width: 170px;
+  }
+  .list .type {
+    font-size: 0.85em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .alcohol {
+    margin-bottom: 100px;
+  }
+  .list {
+    width: 800px;
+  }
+  .list .index th {
+    width: 200px;
+  }
+  .list td {
+    width: 200px;
+    padding: 10px 0 10px 0;
+  }
+  .list .type {
+    padding-left: 10px;
+    padding-top: 15px;
+  }
+  .list tr {
+    border-bottom: solid 4px #fafafa;
+  }
+  .list th {
+    border-right: solid 4px #fafafa;
+  }
+}
+/* 結果 */
+.result {
+  margin-bottom: 50px;
+}
+.result ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.result li {
+  width: 90%;
+  margin: 0 auto;
+  color: #1f1f1f;
+}
+.result .show button {
+  background-color: #f5ee5d;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 1.3em;
+}
+.result .show button:hover {
+  background-color: #fcfac0;
+  color: #1f1f1f;
+}
+.result .reset button {
+  background-color: #ddd;
+  border: none;
+  font-size: 1.3em;
+}
+.result .reset button:hover {
+  background-color: #f5ee5d;
+  color: #1f1f1f;
+}
+.result button {
+  font-family: "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ ゴシック", sans-serif;
+  color: #1f1f1f;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  transition: all 0.3s;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.result-message {
+  margin-bottom: 50px;
+  color: #1f1f1f;
+  text-align: center;
+  font-weight: bold;
+}
+.result-message .inner {
+  text-align: left;
+}
+.result-message p {
+  font-size: 0.7em;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.result-message .p-bold {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+}
+
+#your_status {
+  font-weight: bold;
+  font-size: 2em;
+  color: #de123e;
+}
+
+#num_total {
+  margin: 0 10px;
+}
+
+.result-message span {
+  vertical-align: middle;
+}
+
+#alcoholism {
+  color: #de123e;
+  font-size: 1.1em;
+}
+
+@media screen and (min-width: 768px) {
+  .result {
+    margin-bottom: 100px;
+  }
+  .result li {
+    width: 40%;
+  }
+  .result .show button {
+    margin-bottom: 0;
+  }
+  .result-message {
+    margin-bottom: 100px;
+    font-size: 1.5em;
+  }
+  .result-message .total-number {
+    margin-bottom: 20px; /* 本数 */
+  }
+  .result-message .inner {
+    text-align: center;
+  }
+  .total, .result-percent {
+    display: inline; /* 血中アルコール濃度 */
+  }
+  .total {
+    margin-right: 20px; /* 純アルコール量 */
+  }
+  .period {
+    margin-top: 20px; /* 酔い具合 */
+  }
+  .result-message .p-bold {
+    letter-spacing: 0.15em;
+  }
+  .result-message p {
+    margin-bottom: 0;
+  }
+}
+/* chart */
+.chart ul {
+  display: flex;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 1024px) {
+  .chart ul {
+    margin-bottom: 10px;
+  }
+}
+.chart ul img {
+  width: 100%;
+}
+.chart ul li {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1024px) {
+  .chart ul li {
+    margin-right: 10px;
+  }
+}
+.chart ul li:hover {
+  opacity: 0.7;
+}
+.chart p {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #1f1f1f;
+  font-size: 0.9em;
+}
+@media screen and (min-width: 1024px) {
+  .chart p {
+    margin-bottom: 50px;
+  }
+}
+
+.main-image img {
+  width: 100%;
+}
+
+/* フッター */
+.footer {
+  z-index: 100;
+  padding-bottom: 10px;
+  width: 90%;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    text-align: center;
+    padding-bottom: 40px;
+  }
+}
+.footer .beer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.copyright {
+  font-size: 0.75em;
+  font-weight: bold;
+  text-align: center;
+}
+.copyright a {
+  color: #1f1f1f;
+  transition: all 0.3s;
+  border-bottom: 1px solid #1f1f1f;
+}
+.copyright a:hover {
+  color: #247bb0;
+  border-bottom: 1px solid #247bb0;
+}
+
+.caution {
+  font-size: 0.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .caution {
+    margin-bottom: 30px;
+  }
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+}
+.sns img {
+  width: 30px;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1024px) {
+  .sns img {
+    width: 50px;
+  }
+}
+.sns img:hover {
+  transform: translateY(-0.1875em);
+  filter: drop-shadow(1px 5px 8px rgba(0, 0, 0, 0.2));
+}
+.sns li {
+  margin: 0 10px 10px;
+}
+@media screen and (min-width: 1024px) {
+  .sns li {
+    margin: 0 15px 20px;
+  }
+}
+.sns a {
+  color: #fafafa;
+}
+
+/* Effects */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 180px;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-top: 300px;
+  }
+}
+
+.svg-beer {
+  height: 350px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+@media screen and (min-width: 1024px) {
+  .svg-beer {
+    height: 350px;
+  }
+}
+.svg-beer path {
+  fill: #f5ee5d;
+}
+
+.block-revealer__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/*
+  FAQ
+__________________________________________*/
+.faq dl {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto 40px;
+  font-weight: bold;
+  color: #1f1f1f;
+}
+@media screen and (min-width: 1024px) {
+  .faq dl {
+    width: 80%;
+    margin-bottom: 80px;
+  }
+}
+.faq dl:last-of-type {
+  margin-bottom: 0;
+}
+.faq dt {
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  background-size: 30px;
+  font-size: 1em;
+  border: 2px solid #f5ee5d;
+  padding: 20px 50px 20px 20px;
+}
+@media screen and (min-width: 1024px) {
+  .faq dt {
+    padding: 20px 0 20px 20px;
+  }
+}
+.faq dt:after {
+  content: "";
+  position: absolute;
+  border-right: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+  transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+  right: 20px;
+  top: 25px;
+}
+@media screen and (min-width: 1024px) {
+  .faq dt:after {
+    width: 20px;
+    height: 20px;
+    right: 30px;
+    top: 20px;
+  }
+}
+.faq dt.arrow:after {
+  content: "";
+  position: absolute;
+  border-left: 1px solid #1f1f1f;
+  border-top: 1px solid #1f1f1f;
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+  right: 20px;
+  top: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .faq dt.arrow:after {
+    width: 20px;
+    height: 20px;
+    right: 30px;
+    top: 30px;
+  }
+}
+.faq dd {
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  margin-left: 0px;
+  background-size: 30px;
+  font-size: 0.9em;
+  padding: 20px;
+  line-height: 2;
+  background-color: #f5ee5d;
+}
+@media screen and (min-width: 1024px) {
+  .faq dd {
+    padding-top: 30px;
+  }
+}
+.faq .wrap {
+  width: 90%;
+}
+@media screen and (min-width: 1024px) {
+  .faq .wrap {
+    width: 80%;
+  }
+}
+.faq a {
+  color: #26baf0;
+  transition: all 0.3s;
+}
+.faq a:hover {
+  color: #1f1f1f;
+}
+
+#faq_title01 {
+  font-size: 2em;
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #777;
+  font-weight: bold;
+}
+@media screen and (min-width: 1024px) {
+  #faq_title01 {
+    margin-bottom: 60px;
+    font-size: 2em;
+  }
+}
+
+/*
+  ご利用ガイド
+__________________________________________*/
+.guide-wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+.guide-wrap h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #888;
+}
+@media screen and (min-width: 1024px) {
+  .guide-wrap h2 {
+    margin-bottom: 20px;
+  }
+}
+.guide-wrap ul li {
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .guide-wrap ul li {
+    margin-bottom: 80px;
+  }
+}
+.guide-wrap ul li:last-of-type {
+  margin-bottom: 0;
+}
+.guide-wrap p {
+  font-weight: bold;
+  font-size: 0.9em;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  color: #1f1f1f;
+}
+@media screen and (min-width: 1024px) {
+  .guide-wrap p {
+    font-size: 1em;
+    line-height: 1.8;
+  }
+}
+.guide-wrap a {
+  color: #26baf0;
+  transition: all 0.3s;
+}
+.guide-wrap a:hover {
+  color: #1f1f1f;
+}
+
+.guide-notice {
+  font-size: 0.8em;
+}
+
+.marker {
+  background: linear-gradient(transparent 60%, #f5ee5d 70%);
+  width: 60%;
+}
+
+.small-number {
+  font-size: 0.6em;
+}
+
+/*
+  おつまみ
+__________________________________________*/
+.title-wrap {
+  text-align: center;
+}
+
+#title01 {
+  font-size: 2em;
+}
+
+.banner {
+  margin: 0 auto 40px;
+}
+.banner img {
+  width: 100%;
+}
+
+.nomi-wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nomi-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto 40px;
+  width: 100%;
+}
+.nomi-button a {
+  transition: all 0.3s;
+}
+.nomi-button a:hover {
+  opacity: 0.65;
+}
+.nomi-button li {
+  width: 100%;
+}
+.nomi-button img {
+  width: 100%;
+}
+
+.main-image {
+  margin: 0 auto 50px;
+}
+.main-image img {
+  width: 100%;
+}
+
+/* 宅飲み・外飲み　共通 */
+.takunomi, .sotonomi {
+  margin-bottom: 50px;
+}
+.takunomi h2, .sotonomi h2 {
+  margin: 0 auto 30px;
+  text-align: center;
+}
+.takunomi h2 img, .sotonomi h2 img {
+  width: 100%;
+}
+.takunomi h3, .sotonomi h3 {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border-bottom: 3px dotted #26baf0;
+  color: #1f1f1f;
+}
+.takunomi #block_01, .takunomi #block_02, .takunomi #block_03, .takunomi #block_04, .takunomi #block_05, .takunomi #block_06, .takunomi #block_07, .sotonomi #block_01, .sotonomi #block_02, .sotonomi #block_03, .sotonomi #block_04, .sotonomi #block_05, .sotonomi #block_06, .sotonomi #block_07 {
+  display: inline-block;
+}
+.takunomi .main-wrap, .sotonomi .main-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.main-wrap .comment p {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 2;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin-bottom: 50px;
+}
+
+.lineup {
+  margin-bottom: 50px;
+}
+.lineup li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.lineup img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.lineup-comment {
+  width: 100%;
+}
+.lineup-comment p {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #404040;
+  letter-spacing: 0.05em;
+  line-height: 2;
+  font-size: 0.9em;
+}
+.lineup-comment .second {
+  flex-direction: column-reverse;
+  margin-bottom: 0;
+}
+
+/* 宅飲み */
+.takunomi .image {
+  position: absolute;
+  right: 0;
+  bottom: 380px;
+  text-align: right;
+}
+.takunomi .image img {
+  width: 50%;
+}
+
+.ate-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ate-list li {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.ate-list img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.ate-list p {
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #404040;
+  line-height: 2;
+}
+.ate-list h3 {
+  text-align: center;
+}
+
+/* 外飲み */
+.sotonomi .main-wrap .image {
+  position: absolute;
+  left: 0;
+  bottom: 400px;
+}
+.sotonomi .main-wrap .image img {
+  width: 50%;
+}
+.sotonomi .lineup {
+  margin-bottom: 0;
+}
+
+/* fade 上に上がる */
+.up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 2s;
+}
+
+/* fade 下に下がる */
+.down {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: 2s;
+}
+
+.float-up {
+  animation: float-up 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translate(0, 0px);
+  }
+  100% {
+    transform: translate(0, -15px);
+  }
+}
+.float-down {
+  animation: float-down 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes float-down {
+  0% {
+    transform: translate(0, -15px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@media screen and (min-width: 375px) {
+  .sotonomi .main-wrap .image {
+    bottom: 350px;
+  }
+}
+@media screen and (min-width: 400px) {
+  h2 img {
+    width: 100%;
+  }
+  .sotonomi .main-wrap .image {
+    bottom: 300px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .takunomi .main-wrap .image {
+    bottom: 290px;
+  }
+  .takunomi .main-wrap .image img {
+    width: 70%;
+  }
+  .sotonomi .main-wrap .image {
+    bottom: 290px;
+  }
+  .sotonomi .main-wrap .image img {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2 img {
+    width: 400px;
+  }
+  .takunomi .main-wrap .image {
+    right: 0;
+    bottom: 250px;
+  }
+  .takunomi .main-wrap .image img {
+    width: 80%;
+  }
+  .sotonomi .main-wrap .image {
+    bottom: 250px;
+  }
+  .sotonomi .main-wrap .image img {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #title01 {
+    font-size: 2em;
+  }
+  .banner {
+    margin: 0 auto 80px;
+  }
+  .nomi-button {
+    margin: 0 auto 80px;
+    width: 80%;
+  }
+  .nomi-button li {
+    width: 40%;
+  }
+  .main-image {
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  .main-image img {
+    width: 90%;
+  }
+  .takunomi, .sotonomi {
+    margin-bottom: 100px;
+  }
+  h2 {
+    margin: 0 auto 50px;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  .main-wrap .comment {
+    width: 70%;
+    margin-bottom: 100px;
+  }
+  .takunomi .main-wrap .image {
+    right: 30px;
+    bottom: 300px;
+  }
+  .takunomi .main-wrap .image img {
+    width: 100%;
+  }
+  .lineup {
+    margin-bottom: 100px;
+  }
+  .lineup img {
+    width: 48%;
+    margin-bottom: 0;
+  }
+  .lineup-comment {
+    width: 48%;
+    padding-top: 30px;
+  }
+  .lineup li {
+    margin-bottom: 50px;
+  }
+  .lineup .second {
+    flex-direction: unset;
+  }
+  .ate-list li {
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .ate-list img {
+    width: 100%;
+  }
+  .ate-list p {
+    width: 100%;
+  }
+  .sotonomi .main-wrap .comment {
+    margin-left: auto;
+  }
+  .sotonomi .main-wrap .image {
+    left: 30px;
+    bottom: 150px;
+  }
+  .sotonomi .main-wrap .image img {
+    width: 100%;
+  }
+}
